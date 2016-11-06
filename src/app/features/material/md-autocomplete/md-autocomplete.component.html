@@ -1,0 +1,19 @@
+<md-input #searchInput
+  [placeholder]="placeholder" align="center"
+  style="width: 98%; margin-left: 1em;"
+  [(ngModel)]="searchText"
+  (keyup)="searchCountries($event, searchText)"
+  ></md-input>
+
+<!-- <md-card> -->
+<md-nav-list class="md-nav-list" *ngIf="filteredCountries.length > 0">
+   <a md-list-item href="#" *ngFor="let country of filteredCountries" (click)="selectCountry($event, country)">
+     <img md-list-avatar src="..." alt="...">
+     <h3 md-line> {{country.name}} </h3>
+     <p md-line>
+       <span> {{country.code}} </span>
+       <span class="demo-2" *ngIf="country.location"> -- {{country.location}} </span>
+     </p>
+   </a>
+</md-nav-list>
+<!-- </md-card> -->

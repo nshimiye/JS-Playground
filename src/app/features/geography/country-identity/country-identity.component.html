@@ -1,0 +1,45 @@
+<div class="md-padding">
+  <form ng-submit="$event.preventDefault()">
+    <app-md-autocomplete
+    [md-search-text]="searchText"
+    [md-items]="querySearch(searchText)"
+    [md-selected-item]="selectedItem"
+    (select-country)="selectCountry($event)"
+    placeholder="What is your favorite Country?">
+
+    <app-md-not-found>
+      No states matching "{{searchText}}" were found.
+      <a (click)="newState(searchText)">Create a new one!</a>
+    </app-md-not-found>
+
+  </app-md-autocomplete>
+
+</form>
+<!-- end row 1 -->
+
+<div class="row">
+  <p>Selected country: {{selectedCountry.name}}</p>
+</div>
+
+<!-- end row 2 -->
+</div>
+
+<div class="row" style="width: 100%;">
+  <div class="col" style="width: 45%; float: left;">
+    <p>Remote info: {{realName}}</p>
+    <hr>
+    <p>Origin: ( Lat: {{cartesianDimension.bottomLeft.lat.toFixed(5)}}, Long: {{cartesianDimension.bottomLeft.long.toFixed(5)}} )</p>
+    <hr>
+    <p>End: ( Lat: {{cartesianDimension.topRight.lat.toFixed(5)}}, Long: {{cartesianDimension.topRight.long.toFixed(5)}} )</p>
+  </div>
+  <div class="col" style="width: 8%; float: left;">
+    &nbsp;
+  </div>
+  <div class="col" style="width: 45%; float: left;">
+    <p>Polar Location:</p>
+    <hr>
+    <p>Center: ( Lat: {{polarDimension.lat.toFixed(5)}}, Long: {{polarDimension.long.toFixed(5)}} )</p>
+    <hr>
+    <p>Radius: {{polarDimension.radius}}</p>
+  </div>
+</div>
