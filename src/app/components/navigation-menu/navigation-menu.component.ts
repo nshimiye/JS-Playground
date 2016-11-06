@@ -22,15 +22,15 @@ export class NavigationMenuComponent implements OnInit {
 
   createDummies(): Array<{ name: string, url: string, info: string }> {
     return [{
-      name: 'Geography', url: '#/geography', info: 'string'
+      name: 'Geography', url: '/geography', info: 'string'
     }, {
-      name: 'Authentication', url: '#/authentication', info: 'string'
+      name: 'Authentication', url: '/authentication', info: 'string'
     }, {
-      name: 'Firebase', url: '#/firebase', info: 'string'
+      name: 'Firebase', url: '/firebase', info: 'string'
     }, {
-      name: 'Slack', url: '#/slack', info: 'string'
+      name: 'Slack', url: '/slack', info: 'string'
     }, {
-      name: 'Data representation', url: '#/data-representation',
+      name: 'Data representation', url: '/data-representation',
       info: 'Different ways of showing data on the web, ex: excel/table, network/graph, list,...'
     }];
   }

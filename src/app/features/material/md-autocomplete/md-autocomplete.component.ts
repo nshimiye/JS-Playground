@@ -57,6 +57,10 @@ filteredCountries: Array<any> = [];
 
   searchCountries(ev, text) {
     console.log('searchCountries', ev, text);
+    if(!text || text.trim() === ''){
+      this.filteredCountries = [];
+      return;
+    }
     // Reset items back to all of the items
     this.initializeItems();
 
@@ -66,7 +70,8 @@ filteredCountries: Array<any> = [];
     // if the value is an empty string don't filter the items
     if (val && val.trim() != '') {
       this.filteredCountries = this.filteredCountries.filter((country) => {
-        return (country.name.toLowerCase().indexOf(val.toLowerCase()) > -1);
+        return (country.name.toLowerCase().indexOf(val.toLowerCase()) > -1) ||
+                (country.code.toLowerCase().indexOf(val.toLowerCase()) > -1);
       })
     }
   }

@@ -8,7 +8,7 @@
 <!-- <md-card> -->
 <md-nav-list class="md-nav-list" *ngIf="filteredCountries.length > 0">
    <a md-list-item href="#" *ngFor="let country of filteredCountries" (click)="selectCountry($event, country)">
-     <img md-list-avatar src="..." alt="...">
+     <img md-list-avatar [src]="country.flag" [alt]="country.name">
      <h3 md-line> {{country.name}} </h3>
      <p md-line>
        <span> {{country.code}} </span>

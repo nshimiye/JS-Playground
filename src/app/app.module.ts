@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { RouterModule }   from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { MaterialModule } from '@angular/material';
@@ -16,6 +17,8 @@ import { MdNotFoundComponent } from './features/material/md-not-found/md-not-fou
 import { MdContentComponent } from './features/material/md-content/md-content.component';
 
 import { GeographyService } from './services/geography.service';
+import { SlackComponent } from './features/slack/slack.component';
+import { FirebaseComponent } from './features/firebase/firebase.component';
 
 @NgModule({
   declarations: [
@@ -27,11 +30,25 @@ import { GeographyService } from './services/geography.service';
     MdAutocompleteComponent,
     MdItemTemplateComponent,
     MdNotFoundComponent,
-    MdContentComponent
+    MdContentComponent,
+    SlackComponent,
+    FirebaseComponent
   ],
   imports: [
     BrowserModule,
-    Ng2CompleterModule,
+    RouterModule.forRoot([
+      { path: 'geography', component: GeographyComponent },
+      { path: 'slack', component: SlackComponent },
+      {
+        path: 'firebase',
+        component: FirebaseComponent,
+        data: {
+          title: 'Firebase'
+        }
+      },
+      { path: '', component: GeographyComponent },
+      { path: '**', component: GeographyComponent }
+    ]),
     FormsModule,
     HttpModule,
     MaterialModule.forRoot()
