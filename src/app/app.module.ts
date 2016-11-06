@@ -19,6 +19,8 @@ import { MdContentComponent } from './features/material/md-content/md-content.co
 import { GeographyService } from './services/geography.service';
 import { SlackComponent } from './features/slack/slack.component';
 import { FirebaseComponent } from './features/firebase/firebase.component';
+import { MessagesComponent } from './features/slack/messages/messages.component';
+import { ImagesComponent } from './features/slack/images/images.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { FirebaseComponent } from './features/firebase/firebase.component';
     MdNotFoundComponent,
     MdContentComponent,
     SlackComponent,
-    FirebaseComponent
+    FirebaseComponent,
+    MessagesComponent,
+    ImagesComponent
   ],
   imports: [
     BrowserModule,
