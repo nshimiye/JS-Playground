@@ -21,8 +21,6 @@ import { SlackComponent } from './features/slack/slack.component';
 import { FirebaseComponent } from './features/firebase/firebase.component';
 import { MessagesComponent } from './features/slack/messages/messages.component';
 import { ImagesComponent } from './features/slack/images/images.component';
-import { SignupComponent } from './features/firebase/signup/signup.component';
-import { SigninComponent } from './features/firebase/signin/signin.component';
 import { VhDashboardComponent } from './features/firebase/vh-dashboard/vh-dashboard.component';
 import { FirebaseVhDashboardComponent } from './features/firebase/firebase-vh-dashboard/firebase-vh-dashboard.component';
 import { FirebaseEmailSignupComponent } from './features/firebase/firebase-email-signup/firebase-email-signup.component';
@@ -63,9 +61,6 @@ export const firebaseConfig = {
     FirebaseComponent,
     MessagesComponent,
     ImagesComponent,
-    SignupComponent,
-    SignupComponent,
-    SigninComponent,
     VhDashboardComponent,
     FirebaseVhDashboardComponent,
     FirebaseEmailSignupComponent,
