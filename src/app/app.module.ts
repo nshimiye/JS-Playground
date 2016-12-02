@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule }   from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { MaterialModule } from '@angular/material';
 import { Ng2CompleterModule } from "ng2-completer"
@@ -21,6 +21,32 @@ import { SlackComponent } from './features/slack/slack.component';
 import { FirebaseComponent } from './features/firebase/firebase.component';
 import { MessagesComponent } from './features/slack/messages/messages.component';
 import { ImagesComponent } from './features/slack/images/images.component';
+import { SignupComponent } from './features/firebase/signup/signup.component';
+import { SigninComponent } from './features/firebase/signin/signin.component';
+import { VhDashboardComponent } from './features/firebase/vh-dashboard/vh-dashboard.component';
+import { FirebaseVhDashboardComponent } from './features/firebase/firebase-vh-dashboard/firebase-vh-dashboard.component';
+import { FirebaseEmailSignupComponent } from './features/firebase/firebase-email-signup/firebase-email-signup.component';
+import { FirebaseEmailSigninComponent } from './features/firebase/firebase-email-signin/firebase-email-signin.component';
+
+
+import {
+  FIREBASE_PROVIDERS,
+  defaultFirebase,
+  firebaseAuthConfig,
+  AuthProviders,
+  AuthMethods,
+  AngularFireModule
+} from 'angularfire2';
+
+// Must export the config
+export const firebaseConfig = {
+  apiKey: "AIzaSyDQkICNE0rltdRvGRM2pQ9EzO7z_UoEkIw",
+  authDomain: "playground-2f1a9.firebaseapp.com",
+  databaseURL: "https://playground-2f1a9.firebaseio.com",
+  storageBucket: "playground-2f1a9.appspot.com",
+  messagingSenderId: "1067461117329"
+};
+
 
 @NgModule({
   declarations: [
@@ -36,7 +62,14 @@ import { ImagesComponent } from './features/slack/images/images.component';
     SlackComponent,
     FirebaseComponent,
     MessagesComponent,
-    ImagesComponent
+    ImagesComponent,
+    SignupComponent,
+    SignupComponent,
+    SigninComponent,
+    VhDashboardComponent,
+    FirebaseVhDashboardComponent,
+    FirebaseEmailSignupComponent,
+    FirebaseEmailSigninComponent
   ],
   imports: [
     BrowserModule,
@@ -54,8 +87,10 @@ import { ImagesComponent } from './features/slack/images/images.component';
       { path: '**', component: GeographyComponent }
     ]),
     FormsModule,
+    ReactiveFormsModule,
     HttpModule,
-    MaterialModule.forRoot()
+    MaterialModule.forRoot(),
+    AngularFireModule.initializeApp(firebaseConfig)
   ],
   providers: [ GeographyService ],
   bootstrap: [AppComponent]

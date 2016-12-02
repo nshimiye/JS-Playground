@@ -21,6 +21,7 @@
     "@angular/platform-browser": "~2.1.0",
     "@angular/platform-browser-dynamic": "~2.1.0",
     "@angular/router": "~3.1.0",
+    "angularfire2": "2.0.0-beta.6",
     "core-js": "^2.4.1",
     "ng2-completer": "0.2.3",
     "ng2-typeahead": "1.0.0",
